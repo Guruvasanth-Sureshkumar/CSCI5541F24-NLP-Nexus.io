@@ -256,9 +256,24 @@ sustainably.
 </ul>
 </p>
 
+<hr>
+<h2 id="Methodology">Detailed Methodology</h2>
+
+<p>
+<h3>YOLOv8</h3>
+<p>
+  The dataset used to finetune the YOLOv8n (nano) model was the New Plant Disease Dataset from Kaggle, which itself was imported from Mohanty et al., 2016. This dataset contains 87K RGB images of healthy and diseased crop leaves categorized into 38 different classes. For this project, the model was trained on 25 of these classes.
+</p>
+<p>
+  Since the dataset is not in the YOLO-specific structure, we needed to preprocess the Kaggle dataset into a YOLO-compatible format. This included creating a respective annotation text file for each image containing the ground truth label and the bounding box. Due to the nature of the images in the Kaggle dataset, we defined the bounding box as the entire image, as it is essentially already segmented. The associated code can be modified to include or exclude specific classes from the dataset.
+</p>
+<p>
+  After preprocessing, we trained the YOLOv8n model using the hyperparameters mentioned in Table 1.
+</p>
+</p>
+
 
 <hr>
-    
 <h2 id="results">Results</h2>
 <!-- <p>
 <b>How did you measure success? What experiments were used? What were the results, both quantitative and qualitative? Did you succeed? Did you fail? Why?</b>
