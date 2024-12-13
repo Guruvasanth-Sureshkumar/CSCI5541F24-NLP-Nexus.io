@@ -438,29 +438,104 @@ its ability to avoid hallucination.
     <li><strong>Satisfaction:</strong> Reflects overall user satisfaction with the response’s quality.</li>
   </ul>
 </p>
-<hr>
+
 <p>
   The average scores achieved during the evaluation were:
-  <ul>
-    <li><strong>Relevance:</strong> 4.50</li>
-    <li><strong>Fluency:</strong> 4.52</li>
-    <li><strong>Factuality:</strong> 4.44</li>
-    <li><strong>Satisfaction:</strong> 4.52</li>
-  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Relevance:</strong></td>
+        <td>4.50</td>
+      </tr>
+      <tr>
+        <td><strong>Fluency:</strong></td>
+        <td>4.52</td>
+      </tr>
+      <tr>
+        <td><strong>Factuality:</strong></td>
+        <td>4.44</td>
+      </tr>
+      <tr>
+        <td><strong>Satisfaction:</strong></td>
+        <td>4.52</td>
+      </tr>
+    </tbody>
+  </table>
   These results indicate the model’s strong performance in delivering precise, coherent, and factually accurate responses.
 </p>
-<h2 id="conclusion">Conclustion and Future Work</h2>
+
+
+<hr>
+<h2 id="limitations">Limitations</h2>
+<h3>YOLO Limitation</h3>
+<p>
+  <strong>Poor Lighting Conditions:</strong> YOLOv8 struggles to detect diseases in images with inadequate lighting or high contrast. For instance, plant leaf discoloration under low light can be mistaken for disease symptoms, leading to false positives or missed detections.
+  <br>
+  <em>Potential Solution:</em> Employ image preprocessing techniques such as histogram equalization to normalize lighting conditions or augment the dataset with diverse lighting scenarios.
+</p>
+<p>
+  <strong>Overlapping Leaves in Dense Foliage:</strong> YOLOv8 can misclassify or fail to detect diseases when multiple leaves overlap, obscuring visible disease markers.
+  <br>
+  <em>Potential Solution:</em> Enhance training data with more examples of overlapping foliage and incorporate higher-resolution images to improve object separation.
+</p>
+
+<h2>RAG Limitation</h2>
+<p>
+  <strong>Unsatisfactory Responses to Ambiguous Queries:</strong> While the framework performs well for direct questions, ambiguous or poorly phrased queries can lead to unsatisfactory responses. For example:
+  <br>
+  <strong>Query:</strong> "Are there any resistant potato varieties?"
+  <br>
+  <strong>Model Response:</strong> "I don’t know."
+  <br>
+  This response reflects the model’s inability to retrieve relevant information, even when it exists in the knowledge base.
+  <br>
+  <em>Potential Solution:</em> Implement query rephrasing mechanisms or use chain-of-thought prompting to guide the model in clarifying ambiguous inputs.
+</p>
+<p>
+  <strong>Limitations in Knowledge Base Grounding:</strong> The RAG framework sometimes retrieves information that partially answers a query but lacks specificity or depth. This is particularly evident in queries requiring precise scientific details or local context.
+  <br>
+  <em>Potential Solution:</em> Expand and regularly update the knowledge base with verified, domain-specific literature. Additionally, enhance the embedding model’s semantic understanding with domain-tuned embeddings.
+</p>
+
+<hr>
+<h2 id="conclusion">Conclustion</h2>
 <p>
 
-  In conclusion, the FarmTalk project presents a promising approach to enhancing plant disease management by integrating real-time disease detection 
+  <!-- In conclusion, the FarmTalk project presents a promising approach to enhancing plant disease management by integrating real-time disease detection 
   with reliable remediation advice through a hybrid model that combines YOLOv8 and GPT-3.5 with Retrieval-Augmented Generation (RAG). 
   This solution addresses the limitations of traditional methods, offering farmers a tool that not only identifies plant diseases quickly but also provides 
   context-specific treatment recommendations, thereby improving agricultural efficiency and sustainability. Current limitation will include, limited disease coverage, as of now the model only covers 
   plants such as cotton, and corn. More datasets need to be collected to increase model database and capabilities. One potential harm/risk to society would be a over dependence on such tools
   to replace traditional on-site experiance and knowledge, which would not be desirable. This can be addressed by acknowledging that this is a tool to make things conveniant and expedite action 
-  and not a replacement.
+  and not a replacement. -->
+  FarmTalk successfully demonstrates the potential
+of integrating vision models and LLMs for precision
+agriculture. YOLOv8 provided reliable plant
+disease detection, while the RAG framework enhanced
+context-aware remediation. The platform’s
+user-friendly interface bridges the gap between AI
+capabilities and real-world agricultural needs, empowering
+stakeholders to make informed decisions.
+This project serves as a proof-of-concept for the
+broader application of AI in agriculture.
 </p>
 
+
+<hr>
+<h2 id="future-work">Future Work</h2>
+<p>
+  <ul>
+    <li>Expand the dataset to include more plant species and disease categories.</li>
+    <li>Integrate multi-modal data (e.g., hyperspectral and thermal imaging) for robust detection.</li>
+    <li>Transition the system to edge devices for scalability in remote agricultural areas.</li>
+  </ul>
+</p>
 
 <hr>
 
