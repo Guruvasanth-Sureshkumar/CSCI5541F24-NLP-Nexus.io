@@ -322,7 +322,7 @@ A snapshot of the interface is shown in Figure 1.</p>
 <!-- <p>
 <b>How did you measure success? What experiments were used? What were the results, both quantitative and qualitative? Did you succeed? Did you fail? Why?</b>
 </p> -->
-<p>
+<!-- <p>
   The section below shows the sample output generated. The model was able to identify the plant disease and provide remediation advice based on the input image and user query.
 </p>
 <div style="text-align: center;">
@@ -343,7 +343,30 @@ Improving Air Circulation: Avoid overcrowding plants, as rust thrives in high-hu
 <br>
 Watering Practices: Water the plant at the base rather than overhead to prevent leaf wetness, which promotes rust spore germination.
 
+</p> -->
+
+<h3>YOLO Evaluation</h3>
+<p>
+The precision, recall and mAP50 after 10 epochs were 0.993, 0.994, and 0.994 respectively, demonstrating its ability to accurately detect plant diseases in real-time.
+The following graphs and confusion matrix illustrate the model's performance.
 </p>
+<div style="text-align: center;">
+  <img style="height: 500px;" alt="" src="files/results.png">
+  <figcaption>YOLO Graphs</figcaption>
+</div>
+<div style="text-align: center;">
+  <img style="height: 500px;" alt="" src="files/confusion_matrix_normalized.png">
+  <figcaption>Normalized Confusion Matrix</figcaption>
+</div>
+<p>
+  The output after the model was trained on the dataset is shown below:
+</p>
+
+<div style="text-align: center;">
+  <img style="height: 500px;" alt="" src="files/yolo_result.png">
+  <figcaption>YOLO Inference</figcaption>
+</div>
+
 
 <!-- <table>
   <thead>
