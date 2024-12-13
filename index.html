@@ -363,7 +363,7 @@ The following graphs and confusion matrix illustrate the model's performance.
 </p>
 
 <div style="text-align: center;">
-  <img style="height: 300px;" alt="" src="files/yolo_result.png">
+  <img style="height: 200px;" alt="" src="files/yolo_result.png">
   <figcaption>YOLO Inference</figcaption>
 </div>
 
@@ -413,8 +413,42 @@ critical for practical applications in agriculture.
 </div> -->
 <hr>
 
-
-
+<h2 id="Evaluation">Evaluation</h2>
+<p>
+  We utilized a diverse set of queries relevant to plant
+diseases, along with irrelevant or out-of-context
+queries, to test the robustness of the system. A total
+of 50 queries spanning crops like tomato, corn,
+apple, grape, and potato were evaluated. Responses
+were rated on a scale from 1 (poor) to 5 (excellent)
+for each of the metrics. When faced with irrelevant
+queries, such as "What is the weather in Minneapolis?"
+or "Who is the president of India?", the model
+appropriately responded with "I don’t know," highlighting
+its ability to avoid hallucination.
+</p>
+<p>
+ The following metrics were used for the detailed human evaluation
+</p>
+<p>
+  <ul>
+    <li><strong>Relevance:</strong> Measures how well the model’s responses align with the query’s intent.</li>
+    <li><strong>Fluency:</strong> Evaluates the grammatical correctness and readability of the responses.</li>
+    <li><strong>Factuality:</strong> Assesses the accuracy of the information provided in the response.</li>
+    <li><strong>Satisfaction:</strong> Reflects overall user satisfaction with the response’s quality.</li>
+  </ul>
+</p>
+<hr>
+<p>
+  The average scores achieved during the evaluation were:
+  <ul>
+    <li><strong>Relevance:</strong> 4.50</li>
+    <li><strong>Fluency:</strong> 4.52</li>
+    <li><strong>Factuality:</strong> 4.44</li>
+    <li><strong>Satisfaction:</strong> 4.52</li>
+  </ul>
+  These results indicate the model’s strong performance in delivering precise, coherent, and factually accurate responses.
+</p>
 <h2 id="conclusion">Conclustion and Future Work</h2>
 <p>
 
